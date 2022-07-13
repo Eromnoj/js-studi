@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap')
+@mixin centerFlex($space)
+    display: flex
+    justify-content: $space
+    align-items: center
+
+*
+    box-sizing: border-box
+
+body
+    margin: 0
+    padding: 0
+    background-color: #d3c2c2
+    font-family: 'Lato', sans-serif
+    height: 100vh
+    width: 100vw
+    @include centerFlex(center)
+    font-size: 20px
+
+.App
+    @include centerFlex(space-between)
+    flex-direction: column
+    height: 100vh
+    width: 100vw
+    background-color: white
+
+.player
+    height: 33vh
+    width: 95vw
+    margin: auto
+    margin: 5px
+    padding: 10px
+    @include centerFlex(space-between)
+    flex-direction: row
+    & .playerName
+        font-size: 1.5em
+        color: #8f4848
+    & .globalScore
+        font-size: 4em
+        font-weight: 700
+    & .current
+        color: white
+        background-color: #d3c2c2
+        width: 30%
+        @include centerFlex(center)
+        flex-direction: column
+    & .currentScore
+        font-size: 1.5em
+
+button
+    background-color: white
+    border: none
+    color: #d3c2c2
+    font-family: 'Lato'
+    font-size: 2em
+    font-weight: 300
+    cursor: pointer
+
+.buttonDiv
+    @include centerFlex(space-between)
+    flex-direction: column-reverse
+    height: 100%
+    width: 100%
+    & .dice
+        @include centerFlex(space-evenly)
+        flex-direction: column
+        width: 100%
+        height: 70%
+    & .rollHoldDiv
+        @include centerFlex(space-evenly)
+        flex-direction: row
+        width: 100%
+        & .roll, .hold
+            @include centerFlex(center)
+            margin: 15px
+    & .newGameDiv
+        margin-bottom: 50px
+        text-align: center
+    & > div:nth-of-type(1)
+        order: 2
+    & > div:nth-of-type(2)
+        order: 1
+
+.diceFace
+    width: 100px
+    height: 100px
+
+.diceFaceIcon
+    width: 100%
+    height: 100%
+    color: #d3c2c2
+
+
+@media screen and (min-width: 760px)
+
+    .App
+        @include centerFlex(space-around)
+        flex-direction: row
+        height: 100vh
+        width: 100vw
+        background-color: white
+        transition: 0.5s
+
+    .App > div:nth-of-type(1)
+        order: 1
+    .App > div:nth-of-type(2)
+        order: 3
+    .App > div:nth-of-type(3)
+        order: 2
+
+    .player
+        height: 80vh
+        width: 400px
+        @include centerFlex(space-between)
+        flex-direction: column
+        & .playerName
+            font-size: 1.5em
+            color: #8f4848
+        & .globalScore
+            font-size: 4em
+            font-weight: 700
+        & .current
+            color: white
+            background-color: #d3c2c2
+            width: 100%
+            @include centerFlex(center)
+            flex-direction: column
+        & .currentScore
+            font-size: 1.5em
+
+    .buttonDiv
+        @include centerFlex(space-between)
+        flex-direction: column
+        height: 100%
+        & .dice
+            @include centerFlex(space-around)
+            flex-direction: column
+            height: 70%
+        & .rollHoldDiv
+            width: 300px
+            @include centerFlex(space-between)
+            flex-direction: column
+            & .roll, .hold
+                @include centerFlex(center)
+                margin: 15px
+        & .newGameDiv
+            margin-top: 50px
+            text-align: center
+        & > div:nth-of-type(1)
+            order: 2
+        & > div:nth-of-type(2)
+            order: 1
+
+
+@media screen and (min-width: 960px)
+
+    .App
+        @include centerFlex(space-around)
+        flex-direction: row
+        height: 95vh
+        width: 960px
+        padding: 20px
+        background-color: white
+        transition: 0.5s
+
