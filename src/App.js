@@ -1,4 +1,4 @@
-import './App.sass';
+import './style/App.sass';
 // import { useState } from 'react'
 import Player from './components/Player'
 import Dice from './components/Dice'
@@ -26,7 +26,7 @@ function App() {
       <Dice /> : 
       <div className='winner'>
         <h3>Player {game.winner} Wins !!!</h3>
-        <button className='winner' onClick={() => dispatch(startNewGame())}>New Game</button>  
+        <button className='winnerButton' onClick={() => dispatch(startNewGame())}>New Game</button>  
       </div>}
       
 

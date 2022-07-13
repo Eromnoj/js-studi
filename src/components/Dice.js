@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { FaDiceD6, FaRegStopCircle, FaDiceOne, FaDiceTwo, FaDiceThree, FaDiceFour, FaDiceFive, FaDiceSix } from "react-icons/fa"
+import { FaUndo, FaRegStopCircle, FaDiceOne, FaDiceTwo, FaDiceThree, FaDiceFour, FaDiceFive, FaDiceSix } from "react-icons/fa"
 import { useDispatch, useSelector } from 'react-redux'
 import { rollDice, holdDice, startNewGame } from '../redux'
 import { gsap } from 'gsap'
@@ -37,7 +37,7 @@ function Dice() {
   }
 
   const rotateDice = () => {
-    gsap.to(diceRef.current, { rotation: "+=720", duration: 1}) 
+    gsap.to(diceRef.current, { rotation: "+=1080", duration: 1}) 
     setTimeout(()=> {
       dispatch(rollDice())
     }, 700)
@@ -52,7 +52,7 @@ function Dice() {
             {diceFace}
           </div>
           <div className='rollHoldDiv'>
-            <button className='roll' onClick={() => rotateDice()}><FaDiceD6 />Roll</button>
+            <button className='roll' onClick={() => rotateDice()}><FaUndo />Roll</button>
             <button className='hold' onClick={() => dispatch(holdDice())}><FaRegStopCircle />Hold</button>
           </div>
         </div>}
