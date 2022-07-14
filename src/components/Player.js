@@ -3,14 +3,8 @@ import React from 'react'
 function Player(props) {
     const {id, turn, current, global, winner} = props
 
-    // const stylesPlayer = {
-    //     // border: turn ? "5px solid #dd5e98" : "none",
-    //     filter: winner === id ? "drop-shadow(0 0 1.2rem #d3fcd5)" : turn && winner === 0 ? "drop-shadow(0 0 0.7rem #dd5e98)" : "none"
-    // }
-
     const styleGlow = (color) => {
       return {
-        // border: turn ? "5px solid #dd5e98" : "none",
         filter: winner === id ? "drop-shadow(0 0 1.2rem #d3fcd5)" : turn && winner === 0 ? `drop-shadow(0 0 0.7rem ${color})` : "none"
     }
     }
@@ -24,6 +18,11 @@ function Player(props) {
       color: `hsl(${colorRange(global)}, 100%, 50% )`
     } 
 
+    const styleCurrent = {
+      ...styleGlow('#ee0f73'),
+      backgroundColor: winner === id ? '#ee0f73' : turn && winner === 0 ? '#ee0f73' : '#a6f1a8' 
+    }
+
   return (
     <div className='player' style={styleGlow('#dd5e98')}>
         <div className='playerName' style={styleGlow('#d3fcd5')}>
@@ -32,7 +31,7 @@ function Player(props) {
         <div className='globalScore' style={stylesScore}>
           <p>{global}</p>
         </div>
-        <div className='current'>
+        <div className='current' style={styleCurrent}>
           <h3 className='currentTitle'>Current</h3>
           <p className='currentScore'>{current}</p>
         </div>
