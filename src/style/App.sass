@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap')
 
-
 *
     box-sizing: border-box
 
@@ -24,7 +23,7 @@ body
     background-color: variables.$prussian-blue
 
 .player
-    height: 33vh
+    height: 30%
     width: 95vw
     margin: auto
     margin: 15px
@@ -39,7 +38,7 @@ body
         top: -20px
         font-size: 1.2em
         color: variables.$tea-green
-        filter: drop-shadow(0 0 0.5rem lighten(variables.$tea-green, 10%))
+        // filter: drop-shadow(0 0 0.5rem lighten(variables.$tea-green, 10%))
     & .globalScore
         position: relative
         top: 20px
@@ -70,7 +69,7 @@ button
 .buttonDiv
     @include variables.centerFlex(space-between)
     flex-direction: column-reverse
-    height: 100%
+    height: 30%
     width: 100%
     & .dice
         @include variables.centerFlex(space-evenly)
@@ -85,7 +84,7 @@ button
             @include variables.centerFlex(center)
             margin: 15px
     & .newGameDiv
-        margin-bottom: 50px
+        margin-bottom: 40px
         text-align: center
     & > div:nth-of-type(1)
         order: 2
@@ -106,14 +105,32 @@ button
     color: variables.$tea-green
     @include variables.centerFlex(center)
     flex-direction: column
-    height: 100%
+    height: 30%
+    width: 100%
 
-@media screen and (min-width: 768px)
+
+.rules
+    text-align: center
+    color: variables.$tea-green
+    margin-bottom: 10px
+    & ul
+        list-style: none
+        margin-bottom: 5px
+        padding: 0
+
+@media screen and ( max-width: 380px ) and ( max-height: 670px )
     body
-        background-color: variables.$blue-yonder
+        font-size: 17px
+    .diceFace
+        width: 70px
+        height: 70px
+    
+@media screen and (min-width: 768px)
     .App
         @include variables.centerFlex(space-around)
         flex-direction: row
+        border-radius: 3px
+        filter: drop-shadow(0 0 0.4rem variables.$tea-green)
 
     .App > div:nth-of-type(1)
         order: 1
@@ -124,9 +141,9 @@ button
 
     .player
         height: 80vh
-        width: 500px
         margin: 25px
-        padding: 5px
+        padding: 15px
+        width: 30%
         @include variables.centerFlex(space-between)
         flex-direction: column
         & .playerName
@@ -140,27 +157,20 @@ button
             font-size: 1.5em
 
     .buttonDiv
-        @include variables.centerFlex(space-between)
+        @include variables.centerFlex(space-evenly)
         flex-direction: column
         height: 100%
+        width: 30%
         & .dice
             @include variables.centerFlex(space-around)
             flex-direction: column
             height: 70%
         & .rollHoldDiv
-            width: 300px
             @include variables.centerFlex(space-between)
             flex-direction: column
-            & .roll, .hold
-                @include variables.centerFlex(center)
-                margin: 15px
-        & .newGameDiv
-            margin-top: 50px
-            text-align: center
-        & > div:nth-of-type(1)
-            order: 2
-        & > div:nth-of-type(2)
-            order: 1
+
+    .winner
+        width: 30%
 
 
 @media screen and (min-width: 1024px)
@@ -169,4 +179,3 @@ button
         height: 95vh
         width: 1024px
         padding: 20px
-

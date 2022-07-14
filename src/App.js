@@ -16,6 +16,7 @@ function App() {
     turn={item.turn}
     current={item.current}
     global={item.global}
+    winner={game.winner}
   />)
 
 
@@ -24,7 +25,7 @@ function App() {
       {players}
       {game.winner === 0 ? 
       <Dice /> : 
-      <div className='winner'>
+      <div className='winner centerDiv'>
         <h3>Player {game.winner} Wins !!!</h3>
         <button className='winnerButton' onClick={() => dispatch(startNewGame())}>New Game</button>  
       </div>}

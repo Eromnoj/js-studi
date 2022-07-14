@@ -44,18 +44,26 @@ function Dice() {
   }
 
   return (
-    <div className='buttonDiv'>
-      {gameOn &&
+    <div className='buttonDiv centerDiv'>
+      {gameOn ?
         <div className='dice'>
           <div className='diceFace' ref={diceRef}>
-            {/* {value} */}
             {diceFace}
           </div>
           <div className='rollHoldDiv'>
-            <button className='roll' onClick={() => rotateDice()}><FaUndo />Roll</button>
-            <button className='hold' onClick={() => dispatch(holdDice())}><FaRegStopCircle />Hold</button>
+            <button className='roll' onClick={() => rotateDice()}><FaUndo />  Roll</button>
+            <button className='hold' onClick={() => dispatch(holdDice())}><FaRegStopCircle />  Hold</button>
           </div>
-        </div>}
+        </div> :
+        <div className='rules'>
+          <ul>
+            <li>Roll the dice to make points</li>
+            <li>Hold to save your points and pass your turn</li>
+            <li>If you roll a 1, you loose all your current points, and pass your turn</li>
+            <li>First player to 100 points wins the game</li>
+          </ul>
+        </div>
+        }
 
       <div className='newGameDiv'>
         <button className='newGame' onClick={() => dispatch(startNewGame())}>{gameOn ? 'Stop Game' : 'New Game'}</button>

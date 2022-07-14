@@ -1,11 +1,18 @@
 import React from 'react'
 
 function Player(props) {
-    const {id, turn, current, global} = props
+    const {id, turn, current, global, winner} = props
 
-    const stylesPlayer = {
+    // const stylesPlayer = {
+    //     // border: turn ? "5px solid #dd5e98" : "none",
+    //     filter: winner === id ? "drop-shadow(0 0 1.2rem #d3fcd5)" : turn && winner === 0 ? "drop-shadow(0 0 0.7rem #dd5e98)" : "none"
+    // }
+
+    const styleGlow = (color) => {
+      return {
         // border: turn ? "5px solid #dd5e98" : "none",
-        filter: turn ? "drop-shadow(0 0 0.7rem #dd5e98)" : "none"
+        filter: winner === id ? "drop-shadow(0 0 1.2rem #d3fcd5)" : turn && winner === 0 ? `drop-shadow(0 0 0.7rem ${color})` : "none"
+    }
     }
 
     const colorRange = (value) => {
@@ -13,12 +20,13 @@ function Player(props) {
     }
 
     const stylesScore = {
+      ...styleGlow(`hsl(${colorRange(global)}, 100%, 50% )`),
       color: `hsl(${colorRange(global)}, 100%, 50% )`
     } 
 
   return (
-    <div className='player' style={stylesPlayer}>
-        <div className='playerName'>
+    <div className='player' style={styleGlow('#dd5e98')}>
+        <div className='playerName' style={styleGlow('#d3fcd5')}>
           <h2>Player {id}</h2>
         </div>
         <div className='globalScore' style={stylesScore}>
