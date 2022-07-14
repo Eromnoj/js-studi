@@ -44,7 +44,7 @@ function Dice() {
   }
 
   return (
-    <div className='buttonDiv centerDiv'>
+    <div className='buttonDiv'>
       {gameOn ?
         <div className='dice'>
           <div className='diceFace' ref={diceRef}>
