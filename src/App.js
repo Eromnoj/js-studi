@@ -4,9 +4,9 @@ import Notices from './components/Notices'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -26,9 +26,7 @@ function App() {
 
         </Routes>
 
-        <footer className='footer'> {/* Footer with links to the different elements */}
-          <p><span><Link to='/'>Jeu</Link></span>  <span><Link to='/notices'>Mentions légales</Link></span></p>
-        </footer>
+        <Footer />
       </div>
     </Router>
 

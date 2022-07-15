@@ -8,3 +8,5 @@ Si le joueur fait un 1, il perd son cumul de points et passe la main au joueur a
 ## Technologies
 Le jeu est réalisé avec la bibliothèque React pour l'interface, Redux-toolkit pour la gestion des states, React-icons pour l'import des icônes, Gsap pour les animations, et Sass pour le design.
 
+## Déploiement
+Le jeu est déployé grâce à Netlify et est accessible [ici](https://fastidious-macaron-d5c0d2.netlify.app/)
