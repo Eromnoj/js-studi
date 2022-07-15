@@ -1,37 +1,37 @@
-import './style/App.sass';
-// import { useState } from 'react'
-import Player from './components/Player'
-import Dice from './components/Dice'
-import { useSelector, useDispatch } from 'react-redux'
-import { startNewGame } from './redux';
+import './style/App.sass'
+import Game from './components/Game'
+import Notices from './components/Notices'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom'
 
 function App() {
-  const game = useSelector(state => state.game)
-  const dispatch = useDispatch()
-  // console.log(game)
-  
-  const players = game.players.map(item => <Player
-    key={item.id}
-    id={item.id}
-    turn={item.turn}
-    current={item.current}
-    global={item.global}
-    winner={game.winner}
-  />)
-
 
   return (
-    <div className="App">
-      {players}
-      {game.winner === 0 ? 
-      <Dice /> : 
-      <div className='winner centerDiv'>
-        <h3>Player {game.winner} Wins !!!</h3>
-        <button className='winnerButton' onClick={() => dispatch(startNewGame())}>New Game</button>  
-      </div>}
-      
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route 
+            path='/'
+            element={<Game />}
+          /> {/* Route for the game */}
+          
+          <Route 
+          path='/notices' 
+          element={ <Notices /> } 
+          /> {/* Route for legal notices */}
 
-    </div>
+        </Routes>
+
+        <footer className='footer'> {/* Footer with links to the different elements */}
+          <p><span><Link to='/'>Jeu</Link></span>  <span><Link to='/notices'>Mentions légales</Link></span></p>
+        </footer>
+      </div>
+    </Router>
+
   );
 }
 

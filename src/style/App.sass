@@ -19,6 +19,9 @@ body
     width: 100%
     @include variables.centerFlex(center)
 
+a
+    color: variables.$screamin-green
+
 .App
     @include variables.centerFlex(space-between)
     flex-direction: column
@@ -120,6 +123,16 @@ button
         margin-bottom: 5px
         padding: 0
 
+.notices
+    height: 90%
+    color: variables.$tea-green
+    display: block
+    overflow: auto
+.footer
+    position: absolute
+    bottom: -30px
+    padding-bottom: 10px
+
 @media screen and (min-width: 660px) and (max-height: 660px)
     body
         height: 100%
@@ -170,6 +183,10 @@ button
 
     .winner
         width: 30%
+
+    .footer
+        position: absolute
+        bottom: -10px
 
 @media screen and (min-width: 1024px)
 
