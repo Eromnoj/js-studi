@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="new-game">
+            <form class="start-game">
+                <label for="player1">
+                    Nom du Joueur 1 :
+                </label>
+                <input type="text" name="player1" class="input--player1" required>
+                <label for="player2">
+                    Nom du Joueur 2 :
+                </label>
+                <input type="text" name="player2" class="input--player2" required>
+                <button class="button">Commencer une partie</button>
+            </form>
+        </div>
+
+        <div class="game">
+
+            <div class="player1">
+                <div class="player1--name"></div>
+                <div class="player1--score"></div>
+                <div class="player1--pending"></div>
+            </div>
+
+            <div class="player2">
+                <div class="player2--name"></div>
+                <div class="player2--score"></div>
+                <div class="player2--pending"></div>
+            </div>
+
+            <div class="currentPlayer">
+                <div class="currentPlayer--name"></div>
+            </div>
+
+            <div class="dice">
+                <div class="dice--value"></div>
+                <button type="button" class="roll button">Roll</button>
+                <button type="button" class="hold button">Hold</button>
+            </div>
+
+            <div class="endGameDiv">
+                <div class="endGame"></div>
+                
+            </div>
+            <button type="button" class="newGame button">Nouvelle Partie</button>
+        </div>
+
+
+
+    </main>
+    <script src="classes.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
