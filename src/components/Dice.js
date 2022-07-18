@@ -14,6 +14,7 @@ function Dice() {
 
   //Switching between dice's face icons depending on the dice result
   let diceFace
+  let ariaDiceValue = `Valeur du dé : ${value}` //string for accessibility
   switch (value) {
     case 1:
       diceFace = <FaDiceOne className='diceFaceIcon' />
@@ -56,12 +57,12 @@ function Dice() {
       {/* Conditionnal render of dice or welcome display wether the game is running or not */}
       {gameOn ?
         <div className='dice'>
-          <div className='diceFace' ref={diceRef}>
+          <div className='diceFace' aria-label={ariaDiceValue} ref={diceRef}>
             {diceFace}
           </div>
           <div className='rollHoldDiv'>
-            <button className='roll' onClick={() => rotateDice()}><FaUndo />  Lancer</button>
-            <button className='hold' onClick={() => dispatch(holdDice())}><FaRegStopCircle />  Bloquer</button>
+            <button className='roll' aria-label='lancer le dé' onClick={() => rotateDice()}><FaUndo />  Lancer</button>
+            <button className='hold' aria-label='bloquer le score cumulé' onClick={() => dispatch(holdDice())}><FaRegStopCircle />  Bloquer</button>
           </div>
         </div> :
         <div className='rules'>

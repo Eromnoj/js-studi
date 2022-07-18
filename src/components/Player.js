@@ -2,6 +2,9 @@ import React from 'react'
 
 function Player(props) {
     const {id, turn, current, global, winner} = props
+    //strings for accessibility
+    let ariaGlobalScore = `Score global du joueur ${id}`
+    let ariaCurrentScore = `Cumul du tour du joueur ${id}`
 
     //Functions for conditionnal rendering :
       //Glow or not player's elements depending on : turn to play || winning the game
@@ -32,12 +35,12 @@ function Player(props) {
         <div className='playerName' style={styleGlow('#d3fcd5')}>
           <h2>Joueur {id}</h2>
         </div>
-        <div className='globalScore' style={stylesScore}>
+        <div className='globalScore' aria-label={ariaGlobalScore} style={stylesScore}>
           <p>{global}</p>
         </div>
         <div className='current' style={styleCurrent}>
           <h3 className='currentTitle'>Cumul</h3>
-          <p className='currentScore'>{current}</p>
+          <p className='currentScore' aria-label={ariaCurrentScore}>{current}</p>
         </div>
       </div>
   )
