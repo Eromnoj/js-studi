@@ -25,7 +25,7 @@ function Game() {
                 <Dice /> :
                 <div className='winner centerDiv'>
                     <h3>Joueur {game.winner} Gagne la Partie !!!</h3>
-                    <button className='winnerButton' aria-label='Nouvelle partie' onClick={() => dispatch(startNewGame())}>Nouvelle partie</button>
+                    <button id='startWin' className='winnerButton' aria-label='Nouvelle partie' onClick={() => dispatch(startNewGame())}>Nouvelle partie</button>
                 </div>}
         </>
     )

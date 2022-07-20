@@ -61,8 +61,8 @@ function Dice() {
             {diceFace}
           </div>
           <div className='rollHoldDiv'>
-            <button className='roll' aria-label='lancer le dé' onClick={() => rotateDice()}><FaUndo />  Lancer</button>
-            <button className='hold' aria-label='bloquer le score cumulé' onClick={() => dispatch(holdDice())}><FaRegStopCircle />  Bloquer</button>
+            <button id='roll' className='roll' aria-label='lancer le dé' onClick={() => rotateDice()}><FaUndo />  Lancer</button>
+            <button id='hold' className='hold' aria-label='bloquer le score cumulé' onClick={() => dispatch(holdDice())}><FaRegStopCircle />  Bloquer</button>
           </div>
         </div> :
         <div className='rules'>
@@ -76,7 +76,7 @@ function Dice() {
       }
 
       <div className='newGameDiv'>
-        <button className='newGame' onClick={() => dispatch(startNewGame())}>{gameOn ? 'Arrêter la partie' : 'Nouvelle Partie'}</button>
+        <button id='startStop' className='newGame' onClick={() => dispatch(startNewGame())}>{gameOn ? 'Arrêter la partie' : 'Nouvelle Partie'}</button>
       </div>
     </div>
   )
